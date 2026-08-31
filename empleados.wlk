@@ -3,9 +3,17 @@ object gimenez {
     
     method fondo() = fondo
 
-    method pagarSueldo(empleado) {                                  // paga sueldo a cualquier empleado
+    method pagarSueldo(empleado) {             
+        const monto = empleado.sueldo()                     
+        self.validarFondosParaGastos(monto)
+
+
         fondo = fondo - empleado.sueldo()
         empleado.cobrar()
+    }
+    method validarFondosParaGastos(monto) {
+      if (not fondo >= monto){
+        self.error(" no hay fondos suficientes")      }
     }
 }
 
