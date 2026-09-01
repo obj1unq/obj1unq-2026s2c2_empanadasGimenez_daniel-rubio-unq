@@ -1,0 +1,7 @@
+import empleados.*
+describe "test de empleados"{
+        test "dinero insuficiento"{
+        baigorria.vender(20000)
+        assert.throwsException({gimenez.pagarSueldo(galvan)})
+    }
+} 
